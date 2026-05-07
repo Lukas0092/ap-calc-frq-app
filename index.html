@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AP Calculus AB FRQ Practice</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$','$'], ['\\(','\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+  <div id="app">
+
+    <!-- Landing / Home -->
+    <div id="home-screen">
+      <header>
+        <div>
+          <h1>AP Calculus AB</h1>
+          <p class="subtitle">FRQ Practice Generator</p>
+        </div>
+        <div class="stats">
+          <div class="stat-box">
+            <span class="stat-num" id="attempted">0</span>
+            <span class="stat-label">Practiced</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" id="streak">0</span>
+            <span class="stat-label">Streak</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>Pick a Topic</h2>
+        <div class="topic-grid" id="topic-grid"></div>
+      </section>
+
+      <section class="section">
+        <h2>Topic Frequency on Past Exams</h2>
+        <p class="muted">How often each topic appeared on AP Calculus AB FRQs, 2000 &#8211; 2024.</p>
+        <div class="analysis-list" id="analysis-grid"></div>
+      </section>
+
+      <footer>
+        <p>Questions modeled after real AP Calculus AB FRQs. Not affiliated with College Board.</p>
+      </footer>
+    </div>
+
+    <!-- Question Screen -->
+    <div id="question-screen" class="hidden">
+      <nav class="topbar">
+        <button class="btn-ghost" id="btn-back">&larr; Back</button>
+        <span class="topbar-title" id="current-topic-badge"></span>
+        <button class="btn-accent" id="btn-new">New Question</button>
+      </nav>
+
+      <div class="question-card">
+        <div id="question-text" class="question-text"></div>
+        <div class="parts" id="parts-container"></div>
+      </div>
+
+      <div class="actions">
+        <button class="btn-primary" id="btn-show-solution">Show Solution</button>
+      </div>
+
+      <div id="solution-area" class="solution-card hidden">
+        <h3>Solution</h3>
+        <div id="solution-text"></div>
+      </div>
+
+      <div id="self-grade" class="grade-card hidden">
+        <p>How did you do?</p>
+        <div class="grade-row">
+          <button class="btn-grade green" id="btn-correct">Got It</button>
+          <button class="btn-grade yellow" id="btn-partial">Partial</button>
+          <button class="btn-grade red" id="btn-wrong">Missed It</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
